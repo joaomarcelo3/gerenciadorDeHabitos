@@ -18,7 +18,7 @@ public class GerenciadorDeHabitos {
 
     public void listarHabitos(){
         for (int i = 0; i < habitos.size(); i++) {
-            System.out.println("["+i+"]" + "." + habitos.get(i));
+            System.out.println(habitos.get(i));
         }
     }
 
