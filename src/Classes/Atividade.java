@@ -4,8 +4,6 @@ public abstract class Atividade {
     protected String nome;
     protected String descricao;
 
-    public abstract void executar();
-
     public String getNome() {
         return nome;
     }

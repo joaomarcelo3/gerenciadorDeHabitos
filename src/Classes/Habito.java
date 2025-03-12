@@ -5,29 +5,34 @@ import Interfaces.Concluivel;
 public class Habito extends Atividade implements Concluivel {
 
     private int frequenciaSemanal;
+    private boolean concluido;
 
-    public Habito(String nome, String descricao, int frequenciaSemanal) {
+    public Habito(String nome, String descricao, int frequenciaSemanal, boolean concluido) {
         this.nome = nome;
         this.descricao = descricao;
         this.frequenciaSemanal = frequenciaSemanal;
-    }
-
-    @Override
-    public void executar() {
-        System.out.println("Executando hábito: " + nome);
+        this.concluido = false;
     }
 
     @Override
     public void concluir() {
-        System.out.println("Hábito '" + nome + "' concluído!");
-    }
+        this.concluido = true;
+        }
 
     @Override
     public String toString() {
-        return "Nome: " + nome + 
-        "\nDescricao: " + descricao + 
-        "\nFrequencia Semanal: " + frequenciaSemanal;
+        return "Nome: " + nome + ", Descricao: " + descricao + ", Frequencia Semanal: " + frequenciaSemanal
+                + "," + (concluido ? " " : " não ") + "está concluído" ;
     }
 
     
+
+    
+
+    
 }
+
+    
+
+    
+

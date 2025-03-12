@@ -10,32 +10,42 @@ public class Menu {
     
     public void menuAdicionaHabito(){
 
-        System.out.println("escreva o nome do hábito:");
+        System.out.print("escreva o nome do hábito: ");
         String nome = scanner.nextLine();
 
-        System.out.println("escreva a descrição do hábito:");
+        System.out.print("escreva a descrição do hábito: ");
         String descricao = scanner.nextLine();
 
-        System.out.println("Digite a frequência semanal:");
-
+        System.out.print("Digite a frequência semanal: ");
         while (!scanner.hasNextInt()) {
-            System.out.println("Opção inválida, escreva um número inteiro, tente novamente");
+            System.out.println("Opção inválida, escreva um número inteiro, tente novamente!");
+            System.out.print("Digite a frequência semanal: ");
             scanner.next();
         }
+
         int frequenciaSemanal = scanner.nextInt();
         scanner.nextLine();
-        
+               
         habitos.adicionarHabitos(nome, descricao, frequenciaSemanal);
     }
 
+    public void menuListaHabito(){
+        habitos.listarHabitos();
+    }
+
     public void menuConcluiHabito(){
-        System.out.println("Escreva o indice do hábito que foi concluído:");
+
+        System.out.print("Escreva o indice do hábito que foi concluído: ");
         int indice = scanner.nextInt();
+
         habitos.concluirHabitos(indice);
+
     }
 
     public void iniciarMenu(){
+
         int opcao;
+
         do {
             System.out.println("----------------MENU----------------");
             System.out.println("1.Adicionar Habitos");
@@ -44,7 +54,7 @@ public class Menu {
             System.out.println("4.Sair");
             System.out.println("------------------------------------");
 
-            System.out.println("Escolha uma opção:");
+            System.out.print("Escolha uma opção: ");
             opcao = scanner.nextInt();
             scanner.nextLine();
  
@@ -54,7 +64,7 @@ public class Menu {
                     break;
 
                 case 2:
-                habitos.listarHabitos();
+                menuListaHabito();
                     break;
                 
                 case 3:
@@ -69,7 +79,7 @@ public class Menu {
                 System.out.println("Opção inválida...tente novamente!");
                     break;
             }
-        } while (opcao != 5);
+        } while (opcao != 4);
 
         scanner.close();
 
